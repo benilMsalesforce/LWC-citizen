@@ -1,0 +1,76 @@
+<template>
+	<ul class="slds-accordion">
+	  <li class="slds-accordion__list-item">
+		<section class={blockClasses}>
+		  <div class="slds-accordion__summary">
+			<h3 class="slds-accordion__summary-heading">
+			  <template if:true={_propSetMap.repeat}>
+				<button if:true={blockLabel}
+						aria-controls={blockLabel}
+						class="slds-button slds-button_reset slds-accordion__summary-action"
+						style="text-decoration: none;"
+						onclick={toggleContent}>
+				  <omnistudio-icon extraclass="slds-accordion__summary-action-icon slds-m-right_x-small"
+						  iconposition="left"
+						  icon-name="utility:switch"
+						  alternative-text="accordion-title"
+						  size="x-small">
+				  </omnistudio-icon>
+				  <span class="slds-truncate"
+						title={blockLabel}>
+					{blockLabel} repeat
+				  </span>
+				</button>
+			  </template>
+			  <template if:false={_propSetMap.repeat}>
+				<button if:true={blockLabel}
+						aria-controls={blockLabel}
+						class="slds-button slds-button_reset slds-accordion__summary-action"
+						style={_propSetMap.style}
+						onclick={toggleContent}>
+				  <omnistudio-icon extraclass="slds-accordion__summary-action-icon slds-m-right_x-small"
+						  iconposition="left"
+						  icon-name="utility:switch"
+						  alternative-text="accordion-title"
+						  size="x-small">
+				  </omnistudio-icon>
+				  <span class="slds-truncate"
+						title={blockLabel}>
+					{blockLabel} no repeat
+				  </span>
+				</button>
+			  </template>
+			</h3>
+			<template if:true={_propSetMap.repeat}>
+			  <div class="slds-button-group slds-p-right_large"
+				   role="group">
+				<omnistudio-button if:true={canRepeat}
+						  variant="base"
+						  onclick={handleAdd}
+						  label={allCustomLabelsUtil.OmniAdd}>
+				</omnistudio-button>
+				<omnistudio-button if:true={canRemove}
+						  variant="base"
+						  onclick={handleRemove}
+						  label={allCustomLabelsUtil.OmniDelete}
+						  class="slds-m-left_x-small">
+				</omnistudio-button>
+			  </div>
+			</template>
+		  </div>
+		  <div if:true={showValidation}
+			   class="slds-has-error">
+			<div class="slds-form-element__help">
+			  <span class="slds-text-link_faux"
+					onclick={toggleContent}>
+				{allCustomLabelsUtil.OmniBlockError}
+			  </span>
+			</div>
+		  </div>
+		  <div class={_blockContentContainer}>
+			<slot></slot>
+		  </div>
+		</section>
+	  </li>
+	</ul>
+  </template>

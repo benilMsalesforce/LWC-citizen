@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StaticResource xmlns="http://soap.sforce.com/2006/04/metadata">
+    <cacheControl>Public</cacheControl>
+    <contentType>text/css</contentType>
+    <description>CBDS CSS based on ver 3.16.0 of cbds-theme-salesforce.
+
+Based on CBDS -&gt; https://designsystem.citizensbank.com/</description>
+</StaticResource>

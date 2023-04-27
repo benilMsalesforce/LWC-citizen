@@ -1,0 +1,99 @@
+<template>
+	<slot>
+	<div  if:false={hideStepChart} >
+		<div if:false={isVertical}
+		class="slds-omniscript_stepform slds-size_1-of-1 slds-small-size_1-of-1 slds-large-size_8-of-12
+			   slds-align_absolute-center slds-grid slds-m-top_xx-large slds-m-bottom_x-large">
+	 <div class="slds-size_1-of-1">
+		<div>
+			<h1 class="slds-page-header__title slds-truncate omni-stepchart-heading progress-bar-heading">
+				<span class="current-step">{_currentSTep}</span>/<span class="active-step">{_activeSteps}</span> You're on track
+				</h1>	
+		</div>	   
+	   <div class="slds-progress-bar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="25" aria-label="dummytext" role="progressbar">
+		<span class="slds-progress-bar__value" style="width:18%;background: #fce46c;">
+		  <!-- <span class="slds-assistive-text">Progress: 25%</span> -->
+		</span>
+	  </div>		
+	   <div class="slds-progress slds-size_1-of-1">
+		 <ol class="slds-progress__list">
+		   <template for:each={stepDef}
+					 for:item="step"
+					 for:index="index">
+			 <li key={step.name} class={step.propSetMap.hideThisStep}>
+			   <omnistudio-omniscript-step-chart-items json-def={step}
+											  is-vertical={isVertical}
+											  json-data={jsonDef.response}
+											  current-index={currentIndex}
+											  current-step-index={index}
+											  script-header-def={scriptHeaderDef}>
+			   </omnistudio-omniscript-step-chart-items>
+				
+			 </li>
+		   </template>
+		 </ol>
+		 <div class="slds-progress-bar slds-progress-bar_x-small"
+			  aria-valuemin="0"
+			  aria-valuemax="100"
+			  aria-valuenow={stepProgressValue}
+			  role="progressbar">
+		   <span class="slds-progress-bar__value"
+				 style={progressBarStyle}>
+			 <span class="slds-assistive-text">
+			   Progress: {stepProgressValue}%
+			 </span>
+		   </span>
+		 </div>
+	   </div>
+	 </div>
+   </div>
+   <div if:true={isVertical}>
+		 <div>
+			 <h1 class="slds-page-header__title slds-truncate omni-stepchart-heading progress-bar-heading">
+				 <span class="current-step">{_currentSTep}</span>/<span class="active-step">{_activeSteps}</span> You're on track
+				 </h1>	
+		 </div>	   
+		<div class="slds-progress-bar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="25" aria-label="dummytext" role="progressbar">
+		 <span class="slds-progress-bar__value" style="width:18%;background: #fce46c;">
+		   <!-- <span class="slds-assistive-text">Progress: 25%</span> -->
+		 </span>
+	   </div>	   
+	 <omnistudio-omniscript-formatted-rich-text class="slds-text-longform slds-path__guidance-content"
+									   value={stepInstruction}>
+	 </omnistudio-omniscript-formatted-rich-text>
+
+	 <div class="slds-progress slds-progress_vertical slds-p-vertical_medium slds-p-around_xx-large">
+	   <ol class="slds-progress__list">
+		 <template for:each={stepDef}
+				   for:item="step"
+				   for:index="index">
+		   <li key={step.name}
+		   class={step.propSetMap.hideThisStep}>
+			 <omnistudio-omniscript-step-chart-items json-def={step}
+											is-vertical={isVertical}
+											json-data={jsonDef.response}
+											class="slds-progress__item"
+											last-step-index={lastStepIndex}
+											last-executed-step-index={_lastExecutedStepIndex}
+											first-visible-step-index={firstVisibleStepIndex}
+											current-index={currentIndex}
+											current-step-index={index}
+											script-header-def={scriptHeaderDef}>
+			 </omnistudio-omniscript-step-chart-items>
+		   </li>
+		 </template>
+	   </ol>
+	   <div aria-valuemin="0"
+			aria-valuemax="100"
+			aria-valuenow={stepProgressValue}
+			aria-label={_scriptHeaderDef.allCustomLabels.OmniStepChartLabel}
+			role="progressbar">
+		 <span class="slds-assistive-text">
+		   Progress: {stepProgressValue}%
+		 </span>
+	   </div>
+	 </div>
+   </div> 
+	</div>	 
+	</slot>
+  </template>

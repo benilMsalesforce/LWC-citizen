@@ -1,0 +1,161 @@
+<template>
+            <div class="slds-grid slds-wrap slds-is-relative ">
+            <div style="position: fixed;z-index: 999999;top: 0;right: 0;">
+  <omnistudio-toast class="flexcard-toast-element" theme="slds" title="" message="" styletype=""> </omnistudio-toast>
+</div>
+            <div if:true={showLoader} class="slds-is-absolute vloc-loader_override" style="height: 100%; width: 100%; min-height:50px; background: transparent; z-index: 99;">
+  <div>
+   <omnistudio-spinner
+      variant="brand"
+      alternative-text="Loading content..."
+      size="medium"
+      theme="slds"
+      ></omnistudio-spinner>
+  </div>
+</div>
+            <template if:false={hasPermission}>
+              You don't have required permissions to view this card.
+            </template>
+            <template if:true={hasPermission}>
+              <template if:true={hasRecords}>
+                        <template for:each={_records} for:item="record" for:index="rindex">
+                            <omnistudio-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state slds-size_12-of-12"  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_x-small slds-m-bottom_x-small" style="">
+          <div data-style-id="state0element0" class="slds-col   slds-p-around_x-small slds-m-bottom_large  slds-size_12-of-12  " data-rindex={rindex} style="      
+    border-radius:8px;     " >
+    <omnistudio-block data-style-id="state0element0_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element0" class="slds-col   slds-p-around_x-small  slds-size_12-of-12  " data-rindex={rindex} style="background-color:#c9e9d0;      
+         " >
+    <omnistudio-block data-style-id="state0element0block_element0_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element0block_element0" class="slds-col   slds-size_11-of-12  " data-rindex={rindex} style="" ><omnistudio-output-field data-style-id="state0element0block_element0block_element0_child"   card={card}  record={record}  merge-field="%3Cdiv%3E%3Cstrong%3E%3Cspan%20style=%22font-size:%2012pt;%22%3EProduct%20Details%20-%3C/span%3E%3C/strong%3E%3Cspan%20style=%22font-size:%2012pt;%22%3E%20Clearly%20Better%20Business%20Checking%3C/span%3E%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div>
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element0block_element1" class="slds-col   slds-p-around_x-small  slds-size_12-of-12  " data-rindex={rindex} style="background-color:#fff;      
+    border-radius:8px;     " >
+    <omnistudio-block data-style-id="state0element0block_element1_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element1block_element0" class="slds-col   slds-size_12-of-12  " data-rindex={rindex} style="background-color:#f9edea;      
+         " ><omnistudio-output-field data-style-id="state0element0block_element1block_element0_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22p1%20slds-text-align_justify%22%3ECitizens%20Quest%20Debit%20Card%20%7C%2024/7%20Banking%20with%20mobile%20deposit%20&amp;%20Zelle%20%7C%20Overdraft%20plans%20%7C%3C/div%3E%0A%3Cdiv%20class=%22p1%20slds-text-align_justify%22%3EUnlimited%20use%20of%20Non-Citizens%20ATMs%20with%20no%20fee%20from%20Citizens%20%7C%20ATM%20Owners%20may%20charge%20a%20fee%3C/div%3E%0A%3Cdiv%20class=%22p2%20slds-text-align_justify%22%3EBack%20Save%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div>
+        </div></omnistudio-block>
+    </div>
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element1" class="slds-col   slds-p-around_x-small  slds-size_12-of-12  " data-rindex={rindex} style="background-color:#c9e9d0;      
+         " >
+    <omnistudio-block data-style-id="state0element1_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element1block_element0" class="slds-col   slds-size_11-of-12  " data-rindex={rindex} style="" ><omnistudio-output-field data-style-id="state0element1block_element0_child"   card={card}  record={record}  merge-field="%3Cdiv%3E%3Cstrong%3E%3Cspan%20style=%22font-size:%2012pt;%22%3EBusiness%20Details%3C/span%3E%3C/strong%3E%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element1block_element1" class="slds-col   slds-size_1-of-12  " data-rindex={rindex} style="background-color:#c9e9d0;      
+         " ><omnistudio-flex-action data-style-id="state0element1block_element1_child"  tracking-obj={_childCardTrackingObj}  class= "state0element1block_element1_child flexActionElement" 
+        data-action-element-class="state0element1block_element1_child" data-action-key="state0element1block_element1" onexecuteaction={performAction} data-show-spinner="false"
+        data-element-label="block0action1"   state-obj={record}  card={card}  record={record}  label="Action"  icon-name="utility:edit"  action-list='\[{"stateAction":{"id":"flex-action-1668617886879","type":"cardAction","targetType":"Web Page","openUrlIn":"Current Window","Web Page":{"targetName":"/apex"},"eventName":"setValues","fieldValues":[{"fieldName":"isEdit","fieldValue":"true"}]},"key":"1668617877247-jagmec878","label":"Action","draggable":true,"isOpen":true,"actionIndex":0}]'  icon-only="true"  styles='\{"label":{"textAlign":"right","fontSize":""}}'  icon-color="#000000"  icon-size="small"  flyout-details='\{}'  theme="slds"  ></omnistudio-flex-action>
+      </div>
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element2" class="slds-col   slds-p-around_x-small  slds-size_12-of-12  " data-rindex={rindex} style="      
+         " >
+    <omnistudio-block data-style-id="state0element2_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element2block_element0" class="slds-col  slds-m-bottom_medium  slds-size_3-of-12  " data-rindex={rindex} style="      
+         font-weight: bold; font-size: 14px;" ><omnistudio-output-field data-style-id="state0element2block_element0_child"   card={card}  record={record}  placeholder="JDoe Marketing"  type="text"  label="Business Name"  styles='\{"value":{"color":"#000000","fontSize":""},"label":{"color":"#626262","fontSize":"12px"}}'  field-name="\{Parent.legalBusinessName}"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element2block_element1" class="slds-col  slds-m-bottom_medium  slds-size_3-of-12  " data-rindex={rindex} style="      
+         font-weight: bold; font-size: 14px;" ><omnistudio-output-field data-style-id="state0element2block_element1_child"   card={card}  record={record}  placeholder="Sole Proprietorship"  type="text"  label="Business Type"  styles='\{"label":{"fontSize":"12px","color":"#626262"},"value":{"color":"#000000"}}'  field-name="\{Parent.businessStructure}"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element2block_element2" class="slds-col  slds-m-bottom_medium  slds-size_3-of-12  " data-rindex={rindex} style="      
+         font-weight: bold; font-size: 14px;" ><omnistudio-output-field data-style-id="state0element2block_element2_child"   card={card}  record={record}  placeholder="123456789"  type="number"  label="TIN"  mask="#,##0.###"  styles='\{"label":{"color":"#626262","fontSize":"12px"},"value":{"color":"#000000"}}'  field-name="\{Parent.taxIDNumber}"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element2block_element3" class="slds-col  slds-m-bottom_medium  slds-size_3-of-12  " data-rindex={rindex} style="      
+         font-weight: bold; font-size: 14px;" ><omnistudio-output-field data-style-id="state0element2block_element3_child"   card={card}  record={record}  placeholder="12-12-2022"  type="datetime"  label="Date of Incorporation"  format="MM-DD-YYYY"  styles='\{"label":{"color":"#626262","fontSize":"12px"},"value":{"color":"#000000"}}'  field-name="\{Parent.businessInformationBlock.dateOfIncorporation}"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element2block_element4" class="slds-col  slds-m-bottom_medium  slds-size_3-of-12  " data-rindex={rindex} style="      
+         font-weight: bold; font-size: 14px;" ><omnistudio-output-field data-style-id="state0element2block_element4_child"   card={card}  record={record}  placeholder="500"  type="number"  label="Number of Employees"  format="MM-DD-YYYY"  mask=""  styles='\{"label":{"color":"#626262"},"value":{"color":"#000000"}}'  field-name="\{Parent.businessInformationBlock.totalEmployees}"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element2block_element5" class="slds-col  slds-m-bottom_medium  slds-size_3-of-12  " data-rindex={rindex} style="      
+         font-weight: bold; font-size: 14px;" ><omnistudio-output-field data-style-id="state0element2block_element5_child"   card={card}  record={record}  placeholder="$ 99,999"  type="currency"  label="Annual Revenue"  format="MM-DD-YYYY"  locale="en-US"  currency="USD"  styles='\{"label":{"color":"#626262"},"value":{"color":"#000000"}}'  field-name="\{Parent.businessInformationBlock.annualRevenue}"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element2block_element6" class="slds-col   slds-m-bottom_small  slds-size_12-of-12  " data-rindex={rindex} style="background-color:#c9e9d0;      
+         height: 2px;" >
+    <omnistudio-block data-style-id="state0element2block_element6_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element2block_element7" class="slds-col  slds-m-bottom_medium  slds-size_3-of-12  " data-rindex={rindex} style="      
+         font-weight: bold; font-size: 14px;" ><omnistudio-output-field data-style-id="state0element2block_element7_child"   card={card}  record={record}  placeholder="contact@jdoe.com"  type="text"  label="Business Email"  format="MM-DD-YYYY"  styles='\{"label":{"color":"#626262"},"value":{"color":"#000000"}}'  field-name="\{Parent.businessInformationBlock.businessEmailAddress}"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element2block_element8" class="slds-col  slds-m-bottom_medium  slds-size_3-of-12  " data-rindex={rindex} style="      
+         font-weight: bold; font-size: 14px;" ><omnistudio-output-field data-style-id="state0element2block_element8_child"   card={card}  record={record}  placeholder="(723) 723-7232"  type="text"  label="Business Phone Number"  format="M/D/YYYY"  styles='\{"label":{"color":"#626262"},"value":{"color":"#000000"}}'  field-name="\{Parent.businessInformationBlock.businessPhone}"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element2block_element9" class="slds-col  slds-m-bottom_medium  slds-size_4-of-12  " data-rindex={rindex} style="      
+         font-weight: bold; font-size: 14px;" ><omnistudio-output-field data-style-id="state0element2block_element9_child"   card={card}  record={record}  placeholder="#123, 23rd main, New York, South New York, 12123, USA"  type="text"  label="Business address"  format="MM-DD-YYYY"  styles='\{"label":{"color":"#626262"},"value":{"color":"#000000"}}'  field-name="\{Parent.businessAddressBlock.addressFormula}"  theme="slds"  ></omnistudio-output-field>
+      </div>
+        </div></omnistudio-block>
+    </div>
+        </div>
+      </omnistudio-flex-card-state>
+                        </template>
+                      </template>
+                      <template if:false={hasRecords}>
+                            <omnistudio-flex-card-state  record={record} data-statue="false"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state slds-size_12-of-12"  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_x-small slds-m-bottom_x-small" style="">
+          <div data-style-id="state0element0" class="slds-col   slds-p-around_x-small slds-m-bottom_large  slds-size_12-of-12  " data-rindex={rindex} style="      
+    border-radius:8px;     " >
+    <omnistudio-block data-style-id="state0element0_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element0" class="slds-col   slds-p-around_x-small  slds-size_12-of-12  " data-rindex={rindex} style="background-color:#c9e9d0;      
+         " >
+    <omnistudio-block data-style-id="state0element0block_element0_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element0block_element0" class="slds-col   slds-size_11-of-12  " data-rindex={rindex} style="" ><omnistudio-output-field data-style-id="state0element0block_element0block_element0_child"   card={card}  record={record}  merge-field="%3Cdiv%3E%3Cstrong%3E%3Cspan%20style=%22font-size:%2012pt;%22%3EProduct%20Details%20-%3C/span%3E%3C/strong%3E%3Cspan%20style=%22font-size:%2012pt;%22%3E%20Clearly%20Better%20Business%20Checking%3C/span%3E%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div>
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element0block_element1" class="slds-col   slds-p-around_x-small  slds-size_12-of-12  " data-rindex={rindex} style="background-color:#fff;      
+    border-radius:8px;     " >
+    <omnistudio-block data-style-id="state0element0block_element1_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element1block_element0" class="slds-col   slds-size_12-of-12  " data-rindex={rindex} style="background-color:#f9edea;      
+         " ><omnistudio-output-field data-style-id="state0element0block_element1block_element0_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22p1%20slds-text-align_justify%22%3ECitizens%20Quest%20Debit%20Card%20%7C%2024/7%20Banking%20with%20mobile%20deposit%20&amp;%20Zelle%20%7C%20Overdraft%20plans%20%7C%3C/div%3E%0A%3Cdiv%20class=%22p1%20slds-text-align_justify%22%3EUnlimited%20use%20of%20Non-Citizens%20ATMs%20with%20no%20fee%20from%20Citizens%20%7C%20ATM%20Owners%20may%20charge%20a%20fee%3C/div%3E%0A%3Cdiv%20class=%22p2%20slds-text-align_justify%22%3EBack%20Save%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div>
+        </div></omnistudio-block>
+    </div>
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element1" class="slds-col   slds-p-around_x-small  slds-size_12-of-12  " data-rindex={rindex} style="background-color:#c9e9d0;      
+         " >
+    <omnistudio-block data-style-id="state0element1_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element1block_element0" class="slds-col   slds-size_11-of-12  " data-rindex={rindex} style="" ><omnistudio-output-field data-style-id="state0element1block_element0_child"   card={card}  record={record}  merge-field="%3Cdiv%3E%3Cstrong%3E%3Cspan%20style=%22font-size:%2012pt;%22%3EBusiness%20Details%3C/span%3E%3C/strong%3E%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element1block_element1" class="slds-col   slds-size_1-of-12  " data-rindex={rindex} style="background-color:#c9e9d0;      
+         " ><omnistudio-flex-action data-style-id="state0element1block_element1_child"  tracking-obj={_childCardTrackingObj}  class= "state0element1block_element1_child flexActionElement" 
+        data-action-element-class="state0element1block_element1_child" data-action-key="state0element1block_element1" onexecuteaction={performAction} data-show-spinner="false"
+        data-element-label="block0action1"   state-obj={record}  card={card}  record={record}  label="Action"  icon-name="utility:edit"  action-list='\[{"stateAction":{"id":"flex-action-1668617886879","type":"cardAction","targetType":"Web Page","openUrlIn":"Current Window","Web Page":{"targetName":"/apex"},"eventName":"setValues","fieldValues":[{"fieldName":"isEdit","fieldValue":"true"}]},"key":"1668617877247-jagmec878","label":"Action","draggable":true,"isOpen":true,"actionIndex":0}]'  icon-only="true"  styles='\{"label":{"textAlign":"right","fontSize":""}}'  icon-color="#000000"  icon-size="small"  flyout-details='\{}'  theme="slds"  ></omnistudio-flex-action>
+      </div>
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element2" class="slds-col   slds-p-around_x-small  slds-size_12-of-12  " data-rindex={rindex} style="      
+         " >
+    <omnistudio-block data-style-id="state0element2_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element2block_element0" class="slds-col  slds-m-bottom_medium  slds-size_3-of-12  " data-rindex={rindex} style="      
+         font-weight: bold; font-size: 14px;" ><omnistudio-output-field data-style-id="state0element2block_element0_child"   card={card}  record={record}  placeholder="JDoe Marketing"  type="text"  label="Business Name"  styles='\{"value":{"color":"#000000","fontSize":""},"label":{"color":"#626262","fontSize":"12px"}}'  field-name="\{Parent.legalBusinessName}"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element2block_element1" class="slds-col  slds-m-bottom_medium  slds-size_3-of-12  " data-rindex={rindex} style="      
+         font-weight: bold; font-size: 14px;" ><omnistudio-output-field data-style-id="state0element2block_element1_child"   card={card}  record={record}  placeholder="Sole Proprietorship"  type="text"  label="Business Type"  styles='\{"label":{"fontSize":"12px","color":"#626262"},"value":{"color":"#000000"}}'  field-name="\{Parent.businessStructure}"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element2block_element2" class="slds-col  slds-m-bottom_medium  slds-size_3-of-12  " data-rindex={rindex} style="      
+         font-weight: bold; font-size: 14px;" ><omnistudio-output-field data-style-id="state0element2block_element2_child"   card={card}  record={record}  placeholder="123456789"  type="number"  label="TIN"  mask="#,##0.###"  styles='\{"label":{"color":"#626262","fontSize":"12px"},"value":{"color":"#000000"}}'  field-name="\{Parent.taxIDNumber}"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element2block_element3" class="slds-col  slds-m-bottom_medium  slds-size_3-of-12  " data-rindex={rindex} style="      
+         font-weight: bold; font-size: 14px;" ><omnistudio-output-field data-style-id="state0element2block_element3_child"   card={card}  record={record}  placeholder="12-12-2022"  type="datetime"  label="Date of Incorporation"  format="MM-DD-YYYY"  styles='\{"label":{"color":"#626262","fontSize":"12px"},"value":{"color":"#000000"}}'  field-name="\{Parent.businessInformationBlock.dateOfIncorporation}"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element2block_element4" class="slds-col  slds-m-bottom_medium  slds-size_3-of-12  " data-rindex={rindex} style="      
+         font-weight: bold; font-size: 14px;" ><omnistudio-output-field data-style-id="state0element2block_element4_child"   card={card}  record={record}  placeholder="500"  type="number"  label="Number of Employees"  format="MM-DD-YYYY"  mask=""  styles='\{"label":{"color":"#626262"},"value":{"color":"#000000"}}'  field-name="\{Parent.businessInformationBlock.totalEmployees}"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element2block_element5" class="slds-col  slds-m-bottom_medium  slds-size_3-of-12  " data-rindex={rindex} style="      
+         font-weight: bold; font-size: 14px;" ><omnistudio-output-field data-style-id="state0element2block_element5_child"   card={card}  record={record}  placeholder="$ 99,999"  type="currency"  label="Annual Revenue"  format="MM-DD-YYYY"  locale="en-US"  currency="USD"  styles='\{"label":{"color":"#626262"},"value":{"color":"#000000"}}'  field-name="\{Parent.businessInformationBlock.annualRevenue}"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element2block_element6" class="slds-col   slds-m-bottom_small  slds-size_12-of-12  " data-rindex={rindex} style="background-color:#c9e9d0;      
+         height: 2px;" >
+    <omnistudio-block data-style-id="state0element2block_element6_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element2block_element7" class="slds-col  slds-m-bottom_medium  slds-size_3-of-12  " data-rindex={rindex} style="      
+         font-weight: bold; font-size: 14px;" ><omnistudio-output-field data-style-id="state0element2block_element7_child"   card={card}  record={record}  placeholder="contact@jdoe.com"  type="text"  label="Business Email"  format="MM-DD-YYYY"  styles='\{"label":{"color":"#626262"},"value":{"color":"#000000"}}'  field-name="\{Parent.businessInformationBlock.businessEmailAddress}"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element2block_element8" class="slds-col  slds-m-bottom_medium  slds-size_3-of-12  " data-rindex={rindex} style="      
+         font-weight: bold; font-size: 14px;" ><omnistudio-output-field data-style-id="state0element2block_element8_child"   card={card}  record={record}  placeholder="(723) 723-7232"  type="text"  label="Business Phone Number"  format="M/D/YYYY"  styles='\{"label":{"color":"#626262"},"value":{"color":"#000000"}}'  field-name="\{Parent.businessInformationBlock.businessPhone}"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element2block_element9" class="slds-col  slds-m-bottom_medium  slds-size_4-of-12  " data-rindex={rindex} style="      
+         font-weight: bold; font-size: 14px;" ><omnistudio-output-field data-style-id="state0element2block_element9_child"   card={card}  record={record}  placeholder="#123, 23rd main, New York, South New York, 12123, USA"  type="text"  label="Business address"  format="MM-DD-YYYY"  styles='\{"label":{"color":"#626262"},"value":{"color":"#000000"}}'  field-name="\{Parent.businessAddressBlock.addressFormula}"  theme="slds"  ></omnistudio-output-field>
+      </div>
+        </div></omnistudio-block>
+    </div>
+        </div>
+      </omnistudio-flex-card-state>
+                      </template>
+            </template>
+            <template if:true={hasError}>
+            {error}
+            </template>
+            
+      <omnistudio-action action-wrapperclass="slds-hide" re-render-flyout class="action-trigger slds-col" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction} onfireactionevent={actionEvtHandler}>
+      
+      </omnistudio-action>
+  
+            <omnistudio-action class="execute-action" re-render-flyout action-wrapperclass="slds-hide" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction} onfireactionevent={actionEvtHandler}>
+            
+            </omnistudio-action>
+            </div>
+          </template>

@@ -1,0 +1,21 @@
+.progress-bar-heading{
+    font-size: 29px;
+    text-align: left;
+	font-weight: 100;
+    padding: 20px 20px 20px 50px;
+    color: #fff;
+    background: #00784d;
+    margin-top: 0;	
+}
+
+.current-step{
+	font-weight: bold;
+}
+
+.slds-progress__list .hide-step{
+    display: none;
+}
+.slds-progress_vertical .last-cb-step.slds-progress__item::after{
+    top: 0;
+    bottom: 50%;
+}

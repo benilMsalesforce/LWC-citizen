@@ -1,0 +1,120 @@
+<template>
+    <template if:true={jsonDef.bAccordionActive}>
+        
+      <div>
+        <div class="vlc-slds-knowledge--container"
+             if:true={articleBodyResults.articleTitle}>
+          <h3 class='vlc-slds-knowledge--header'
+              visible={visible}
+              onclick={toggleArticle}>
+            <a href={articleBodyResults.articleLink}
+               target="_blank">{articleBodyResults.articleTitle}</a>
+  
+            <omnistudio-icon class="vlc-slds-collapse slds-button__icon slds-button__icon--large"
+                    variant="default"
+                    size="small"
+                    icon-name="utility:chevrondown"
+                    theme={_theme}></omnistudio-icon>
+  
+            <omnistudio-icon class="vlc-slds-expand slds-button__icon slds-button__icon--large"
+                    variant="default"
+                    size="small"
+                    icon-name="utility:chevronup"
+                    theme={_theme}></omnistudio-icon>
+  
+          </h3>
+  
+          <div class='vlc-slds-knowledge--body'
+               if:true={visible}>
+            <omnistudio-omniscript-formatted-rich-text value={articleBodyResults.articleBody}>
+            </omnistudio-omniscript-formatted-rich-text>
+          </div>
+  
+          <div>
+            <omnistudio-icon class="slds-icon_container slds-button__icon slds-button__icon--large"
+                    variant="default"
+                    size="small"
+                    onclick={closeArticle}
+                    icon-name="action:remove"
+                    theme={_theme}></omnistudio-icon>
+          </div>
+        </div>
+      </div>
+      <h1 class="slds-page-header__title slds-p-horizontal_medium slds-text-heading--medium slds-m-top_medium">
+        {_propSetMap.label}
+      </h1>
+      <div class="vlc-separator slds-border_top slds-m-top_x-small slds-m-bottom_xx-small slds-m-horizontal_medium">
+      </div>
+      <div class="slds-grid slds-wrap slds-p-vertical_small omniscript-step__body">
+        <slot class='slds-grid slds-wrap slds-size_1-of-1 slds-p-left_medium'>
+        </slot>
+      </div> 
+      <div class="slds-grid slds-wrap slds-m-bottom_x-large">
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_8-of-12">
+            <div class="slds-col slds-grid slds-size_1-of-2">
+                <div class="slds-col slds-size_1-of-2 slds-p-right_large" if:true={_showBack}>
+                    <omnistudio-button 
+                        variant="base"
+                        onclick={goBack}
+                        label="Back"
+                        class="vlocity-btn slds-button slds-button_brand slds-size_1-of-1 slds-p-horizontal_none slds-text-align_center"
+                        theme={_theme}>
+                    </omnistudio-button>
+                </div>
+                <div class="slds-col slds-size_1-of-2"  if:true={jsonDef.propSetMap.showSaveForLaterButton} >
+                    <omnistudio-button 
+                        variant="base"
+                        onclick={saveForLaterClick}
+                        label="Save And Exit"
+                        class="vlocity-btn slds-button slds-button_brand slds-size_1-of-1 slds-p-horizontal_none slds-text-align_center"
+                        theme={_theme}>
+                    </omnistudio-button>
+                </div>
+              </div>
+        </div>
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_4-of-12">        
+            <omnistudio-button if:true={_showNext}
+                variant="base"
+                onclick={goNext}
+                label="Continue"
+                class="vlocity-btn slds-button slds-button_brand slds-size_1-of-1 slds-p-horizontal_none slds-text-align_center"
+                theme={_theme}>
+            </omnistudio-button>
+        </div>
+      </div>  
+      <div if:true={showmodal}>
+            <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+            <div class="slds-modal__header">
+                
+                <div  if:true={_saveInProgress}>
+                    <h1 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Save in Progress...</h1>
+                </div>
+                <div  if:false={_saveInProgress} >
+
+                </div>
+            </div>
+            <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                <div  if:true={_saveInProgress}>
+                    <div class="demo-only demo--inverse" style="height:6rem;position:relative">
+                        <div role="status" class="slds-spinner slds-spinner_medium">
+                        <span class="slds-assistive-text">Loading</span>
+                        <div class="slds-spinner__dot-a"></div>
+                        <div class="slds-spinner__dot-b"></div>
+                        </div>
+                        </div>              
+                </div>
+                <div  if:false={_saveInProgress} >
+                    Your application has been saved. Please look out for an an email with details
+                </div>              
+            </div>
+            <div class="slds-modal__footer"  if:false={_saveInProgress}>
+                <button class="slds-button slds-button_brand" onclick={closeSaveModal} >Go to Home page</button>
+            </div>
+            </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+        </div>
+    </template>
+    
+  </template>

@@ -1,0 +1,12 @@
+{
+  "packageDirectories": [
+    {
+      "path": "force-app",
+      "default": true
+    }
+  ],
+  "name": "CitizenPOC",
+  "namespace": "",
+  "sfdcLoginUrl": "https://ddn000002gtaemaw.my.salesforce.com/",
+  "sourceApiVersion": "55.0"
+}

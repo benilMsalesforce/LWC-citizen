@@ -1,0 +1,42 @@
+<!--
+  SF Lightning Bundle META
+  ===
+  name: cbdsBaseLayoutv3160
+  desc:
+Base layout based on CBDS and *hardcodes* inclusion of CBDScss3160 CSS static resource.
+Based on CBDS -> https://designsystem.citizensbank.com/
+
+  NOTE: Salesforce appears to remove cbds__ prefix when installed as an unmanaged package?
+-->
+<aura:component implements="forceCommunity:layout" access="global" description="Citizens Design System Base Layout">
+
+    <aura:attribute name="header" type="Aura.Component[]" access="global" />
+    <aura:attribute name="main" type="Aura.Component[]" access="global" />
+    <aura:attribute name="footer" type="Aura.Component[]" access="global" />
+
+    <!-- import CSS version 3.16.0 -->
+    <ltng:require styles="{!$Resource.CBDScss3160}" />
+
+    <div class="sf-l-headerContainer">
+        <div class="sf-l-headerContent">
+            {!v.header}
+        </div>
+    </div>
+
+    <div role="main" class="sf-l-mainContainer">
+        <div class="cbds-l-grid--@xl sf-l-mainContent cbds-u-padding__0">
+            <div class="cbds-l-grid__row">
+                <div class="cbds-l-grid__col">
+                    {!v.main}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sf-l-footerContainer">
+        <div class="sf-l-footerContent">
+            {!v.footer}
+        </div>
+    </div>
+
+</aura:component>

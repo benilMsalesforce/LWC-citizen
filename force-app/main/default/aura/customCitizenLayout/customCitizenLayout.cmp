@@ -1,0 +1,23 @@
+<aura:component implements="forceCommunity:themeLayout">
+    <aura:attribute name="header" type="Aura.Component[]"/>
+    <aura:attribute name="footer" type="Aura.Component[]"/>
+    <div class="custom-wrapper">
+        <div class="slds-grid slds-grid_vertical-align-center">
+            <div class="slds-col cb-header">
+				<div class="header">
+					<img style="display: inline; width:8%;height:8%" src="/resource/1668195815000/citizenLogo?" alt="logo" /> 
+					<h1 style="    display: inline;font-size: 18px; margin-left: 10px;padding-right: 10px;top: 2px;border-left:1px solid #000000; position:relative"></h1> 
+					<h1 style="display: inline;font-size:15px;padding-left:5px">Business Checking Account</h1>
+				</div>
+            </div>
+        </div>
+        <div class="content cb-content-body" onload="{!c.frameLoad}" >
+            {!v.body}
+        </div>
+        <div class="slds-grid slds-grid_vertical-align-end">
+            <div class="slds-col">
+                {!v.footer}
+            </div>
+          </div>
+    </div>
+</aura:component>

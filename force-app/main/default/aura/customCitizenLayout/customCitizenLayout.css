@@ -1,0 +1,188 @@
+.THIS .cb-header{
+	background: #fafafa;
+	border-bottom: 1px solid gray;
+	padding: 18px 10px;
+}
+
+.THIS .cb-content-body{
+	/*background-color: rgb(58 130 89); */
+	min-height: 800px;
+    height: calc(100vh-54px);
+	background: url("/resource/1668448166000/citizenBg?");
+
+}
+/* .THIS .cb-content-body .cb-section { 
+    padding: 8% 2%;
+} */
+
+.THIS .cf-vlocity-state .div{
+	background-color: #008555;
+}
+
+.THIS .cf-vlocity-state .slds-card{
+	border-style: none !important;
+}
+
+.THIS .cf-vlocity-state .select-product, .THIS .cf-vlocity-state .select-product-container, .THIS .cf-vlocity-state .select-fund-source{
+	cursor: pointer;
+}
+
+.THIS .omniscript-side-content.slds-col.slds-m-top_x-small.slds-size_1-of-1.slds-medium-size_1-of-4 {
+    background-color: rgb(0 133 85);
+    margin-top: 0px;
+    background-image: url(https://ddn000002gtaemaw--c.vf.force.com/resource/1668452414000/citizens/citizensStyle/Images/stepchart.png);
+    background-position: bottom;
+    background-repeat: no-repeat;
+}
+.THIS .omniscript-body.slds-card__body.slds-card__body_inner {
+    background-color: rgb(235 240 242);
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.THIS .slds-progress__item.slds-is-active .slds-progress__marker {
+    background-color: rgb(58 130 89);
+    border-color: rgb(58 130 89);
+}
+.THIS .slds-progress__item_content.omni-stepchart-content, .THIS .zipode-container label {
+    color: white;
+}
+.THIS .slds-accordion {
+    background-color: white;
+}
+.THIS .slds-input.slds-listbox__option-text_entity, .THIS .vlocity-input.slds-input, .THIS .slds-input[data-id="date-picker-slds-input"] {
+    padding: 6px;
+    border-radius: 0;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+}
+.THIS .slds-combobox .slds-grid .slds-form-element__label span {
+    font-size: 14px;
+    font-weight: 400;
+}
+.THIS .omniscript-btn-next {
+    background-color:
+}
+.THIS runtime_omnistudio_omniscript-omniscript-block[data-omni-key="Block1"] {
+    min-height: 300px;
+    max-height: 720px;
+    overflow: auto;
+}
+.THIS .slds-page-header__title.os-step-label {
+    display: none;
+}
+.THIS .vlc-separator[runtime_omnistudio_omniscript-omniscriptStep_omniscriptStep] {
+    border: none;
+}
+
+.THIS runtime_omnistudio_omniscript-omniscript-text-block[data-omni-key="TextBlock3"] {
+    background-color: rgb(238 245 242);
+    padding-top: 15px;
+    padding-bottom: 0px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 14px;
+}
+
+
+.THIS runtime_omnistudio_omniscript-omniscript-text-block[data-omni-key="TextBlock5"] {
+    font-weight: 500;
+}
+
+.THIS runtime_omnistudio_omniscript-omniscript-text-block[data-omni-key="TextBlock5"] .slds-text-block runtime_omnistudio_omniscript-omniscript-formatted-rich-text .slds-rich-text-editor__output ul li{
+    padding: 2px;
+}
+
+.THIS runtime_omnistudio_omniscript-omniscript-text-block.slds-show_inline-block[data-omni-key="TextBlock1"] .slds-text-block runtime_omnistudio_omniscript-omniscript-formatted-rich-text .slds-rich-text-editor__output span div p:nth-child(1) {
+    font-size: 22px;
+    color: rgb(58 130 89);
+    font-weight: bold;
+}
+.THIS runtime_omnistudio_omniscript-omniscript-text-block.slds-show_inline-block[data-omni-key="TextBlock1"] .slds-text-block runtime_omnistudio_omniscript-omniscript-formatted-rich-text .slds-rich-text-editor__output span div p:nth-child(2) {
+    font-size: 14px;
+    padding-bottom: 10px;
+    color: #636262;
+}
+
+.THIS .slds-progress__list .hide-step{
+    display: none;
+}
+
+.THIS .siteforceDynamicLayout.siteforceContentArea,
+.THIS div[data-region-name="content"],
+.THIS .cb-section.forceCommunitySection,
+.THIS div.ui-widget,
+.THIS div.cb-section_row,
+.THIS div[data-region-name="1"],
+.THIS div[data-region-name="col1"],
+.THIS forcegenerated-flex-card_cb_landing-page___salesforce___1___false_gen.via-slds .slds-grid.slds-wrap.slds-is-relative,
+.THIS forcegenerated-flex-card_cb_landing-page___salesforce___1___false_gen.via-slds .slds-grid.slds-wrap.slds-is-relative .cf-vlocity-state-0.cf-vlocity-state {
+    /* .THIS forcegenerated-flex-card_cb_landing-page___salesforce___1___false_gen.via-slds .slds-grid.slds-wrap.slds-is-relative .cf-vlocity-state-0.cf-vlocity-state div: first-child */
+    height: 100%;
+}
+
+
+.THIS .slds-col .account-option-container{
+    border: 1px solid #cecece;
+    border-radius: 8px;
+    box-shadow: 3px 3px 3px #ccc;
+    padding: 10px 5px;
+}
+
+.THIS .slds-progress_vertical .last-cb-step.slds-progress__item::after{
+    top: 0;
+    bottom: 50%;
+}
+
+
+.THIS .cb-section_column:only-child{
+    padding: 0px !important;
+}
+
+.THIS .slds-col.finalSection.slds-size_12-of-12 .field-value {
+    font-weight: bold;
+}
+
+.THIS .zip-code-container .slds-wrap {
+    margin-top: 20px;
+    padding-left: 10px;
+}
+.THIS .zip-code-container .slds-col{
+    margin-bottom: 15px;
+}
+
+/* CSS for responsive desing Start*/
+
+@media screen and (min-width: 768px) {
+        .THIS .registration-container{
+            margin-left: 40px;
+        }
+        .THIS .resume-container > div{
+            margin-left: 20px;
+        }
+        .THIS .resume-container > div ~ div{
+            margin-left: 0px;
+        }              
+}
+@media all and (min-width:321px) and (max-width: 750px) {
+    /* put your css styles in here */
+    .THIS .omniscript-container .omniscript-step__body{
+        padding: 8px 8px !important;
+    }
+    .THIS .omniscript-container .slds-omniscript_stepform{
+        margin-top: 0px ;
+        margin-bottom: 4em;
+    }
+    .THIS .omniscript-container .slds-progress__list{
+        margin-top: 20px;
+    }
+    .THIS .omni-hz-stepchart-label[omnistudio-omniscriptStepChartItems_omniscriptStepChartItems_horizontal]{
+        color: #fff;
+    }
+
+    .THIS .phone-font .slds-rich-text-editor__textarea, .THIS .phone-font .slds-rich-text-editor__output{
+        font-size: 8px;
+    }
+    .THIS .phone-font-size .slds-rich-text-editor__textarea div span,.THIS .phone-font-size .slds-rich-text-editor__output div span{
+        font-size: 11px !important;
+    }
+}
